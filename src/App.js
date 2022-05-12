@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-
-
+import DisplayGames from './components/DisplayGames/DisplayGames';
+import axios from 'axios';
 
 function App() {
 
@@ -21,6 +21,8 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Video Games</h1>
+      <DisplayGames games={games}/>
     </div>
   );
 }
