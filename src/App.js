@@ -2,6 +2,8 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import DisplayGames from './components/DisplayGames/DisplayGames';
 import axios from 'axios';
+import SearchBar from './components/DisplayGames/SearchBar';
+
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <SearchBar setGames={setGames}/>
       <h1>Video Games</h1>
       <DisplayGames games={games}/>
     </div>
