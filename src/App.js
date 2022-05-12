@@ -1,31 +1,29 @@
-import './App.css';
-import React, { useState, useEffect } from 'react';
-import DisplayGames from './components/DisplayGames/DisplayGames';
-import axios from 'axios';
-import SearchBar from './components/DisplayGames/SearchBar';
-
-
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import DisplayGames from "./components/DisplayGames/DisplayGames";
+import axios from "axios";
+import SearchBar from "./components/SearchBar/SearchBar";
 function App() {
-
-  const [games, setGames] = useState([])
+  const [games, setGames] = useState([]);
 
   const getGames = async () => {
-    let response = await axios.get("https://localhost:7260/api/videogames");
-    console.log(response.data)
-    setGames(response.data)
+    try {
+      let response = await axios.get("https://localhost:7260/api/videogames");
+      setGames(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
-  useEffect(()=>{
-    getGames()
-  },[])
-
-
+  useEffect(() => {
+    getGames();
+  }, []);
 
   return (
     <div className="App">
-      <SearchBar setGames={setGames}/>
       <h1>Video Games</h1>
-      <DisplayGames games={games}/>
+      <SearchBar games ={games} setGames = {setGames} />
+      <DisplayGames games={games} />
     </div>
   );
 }

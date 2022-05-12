@@ -14,7 +14,7 @@ const DisplayGames = (props) => {
       <tbody>
         {props.games.map((element) => {
           return (
-            <tr>
+            <tr key = {element.id}>
               <td>{element.name}</td>
               <td>{element.platform}</td>
               <td>{element.year}</td>
