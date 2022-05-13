@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import DisplayGames from "./components/DisplayGames/DisplayGames";
 import axios from "axios";
 import SearchBar from "./components/SearchBar/SearchBar";
+import GlobalSalesChart from "./components/Chart/Chart"
 function App() {
   const [games, setGames] = useState([]);
 
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <h1>Video Games</h1>
       <SearchBar games ={games} setGames = {setGames} />
+      <GlobalSalesChart videosGames = {games}/>
       <DisplayGames games={games} />
     </div>
   );
