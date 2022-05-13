@@ -22,11 +22,23 @@ let gameplatform = filteredGames.map((game)=>{
 
 let newplatform = [...new Set(gameplatform)]
 
+
+// games sale
+
+
+
 let platformArrays = newplatform.map(platform=>{
     let gamingplatforms = filteredGames.filter(game =>  game.platform ==  platform);
+    let totalsales = gamingplatforms.map((game)=>{
+        return game.globalSales
+    });
+    
 
+    let sum = totalsales.reduce(total ,currentnum)=>{
+        total+currentnum,0
+    }
 
-    return [platform,10,"silver"]
+    return [platform,sum,"silver"]
 });
 
 console.log(platformArrays)
