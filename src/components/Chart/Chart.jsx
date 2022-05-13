@@ -1,53 +1,43 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
+const GlobalSalesChart = (props) => {
+  function Data() {
+    let filteredGames = props.videosGames.filter((games) => games.year >= 2013);
 
-
-const GlobalSalesChart = (props) =>{
-let filteredGames =props.videosGames.filter((games=>games.year>=2013))
-
-
-const data = [
-  ["Element", "Density", { role: "style" }],
-  ["Copper", 8.94, "#b87333"], // RGB value
-  ["Silver", 10.49, "silver"], // English color name
-  ["Gold", 19.3, "gold"],
-  ["Platinum", 21.45, "color: #e5e4e2"], // CSS-style declaration
-];
-
-
-let gameplatform = filteredGames.map((game)=>{
-    return game.platform
-})
-
-let newplatform = [...new Set(gameplatform)]
-
-
-// games sale
-
-
-
-let platformArrays = newplatform.map(platform=>{
-    let gamingplatforms = filteredGames.filter(game =>  game.platform ==  platform);
-    let totalsales = gamingplatforms.map((game)=>{
-        return game.globalSales
+    let gameplatform = filteredGames.map((game) => {
+      return game.platform;
     });
-    
 
-    let sum = totalsales.reduce(total ,currentnum)=>{
-        total+currentnum,0
-    }
+    let newplatform = [...new Set(gameplatform)];
 
-    return [platform,sum,"silver"]
-});
+    // games sale
 
-console.log(platformArrays)
+    let platformArrays = newplatform.map((platform) => {
+      let gamingplatforms = filteredGames.filter(
+        (game) => game.platform == platform
+      );
+      let totalsales = gamingplatforms.map((game) => {
+        return game.globalSales;
+      });
 
+      let sum = totalsales
+        .reduce((total, currentnum) => total + currentnum, 0)
+        .toFixed(2);
+
+      return [platform, parseFloat(sum), "silver"];
+    });
+
+    const data = [
+      ["Platform", "Sales(per million)", { role: "style" }],
+      ...platformArrays] // CSS-style declaration
+    ;
+    return data;
+  }
 
   return (
-    <Chart chartType="ColumnChart" width="100%" height="400px" data={data} />
+    <Chart chartType="ColumnChart" width="100%" height="400px" data={Data()} />
   );
-}
-
+};
 
 export default GlobalSalesChart;
