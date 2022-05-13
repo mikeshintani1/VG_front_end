@@ -23,9 +23,9 @@ function App() {
   return (
     <div className="App">
       <h1>Video Games</h1>
-      <SearchBar games ={games} setGames = {setGames} />
+      <SearchBar games ={games} setGames = {setGames} getGames={getGames}/>
       <GlobalSalesChart videosGames = {games}/>
-      <DisplayGames games={games} />
+      <DisplayGames games={games} setGames = {setGames}/>
     </div>
   );
 }

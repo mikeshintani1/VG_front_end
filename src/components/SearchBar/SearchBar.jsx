@@ -15,6 +15,10 @@ const SearchBar = (props) => {
       }
     });
     props.setGames(response);
+    setSearch("")
+    if (search === ""){
+      props.getGames()
+    }
   }
 
   return (

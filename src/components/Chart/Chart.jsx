@@ -15,7 +15,7 @@ const GlobalSalesChart = (props) => {
 
     let platformArrays = newplatform.map((platform) => {
       let gamingplatforms = filteredGames.filter(
-        (game) => game.platform == platform
+        (game) => game.platform === platform
       );
       let totalsales = gamingplatforms.map((game) => {
         return game.globalSales;
@@ -25,13 +25,13 @@ const GlobalSalesChart = (props) => {
         .reduce((total, currentnum) => total + currentnum, 0)
         .toFixed(2);
 
-      return [platform, parseFloat(sum), "silver"];
+      return [platform, parseFloat(sum), "blue"];
     });
 
     const data = [
       ["Platform", "Sales(per million)", { role: "style" }],
-      ...platformArrays] // CSS-style declaration
-    ;
+      ...platformArrays,
+    ]; // CSS-style declaration
     return data;
   }
 

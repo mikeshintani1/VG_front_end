@@ -1,5 +1,13 @@
 import React from "react";
 const DisplayGames = (props) => {
+  function currentGameStats(name) {
+    let response = props.games.filter((element) => {
+      if (element.name === name) {
+        return true;
+      }
+    });
+    props.setGames(response);
+  }
   return (
     <table className="table">
       <thead>
@@ -12,18 +20,24 @@ const DisplayGames = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.games.map((element) => {
-          return (
-            <tr key = {element.id}>
-              <td>{element.name}</td>
-              <td>{element.platform}</td>
-              <td>{element.year}</td>
-              <td>{element.genre}</td>
-              <td>{element.publisher}</td>
-              <td><button>View Status</button></td>
-            </tr>
-          );
-        })}
+        {props.games
+          .filter((game) => game.year >= 2013)
+          .map((element) => {
+            return (
+              <tr key={element.id}>
+                <td>{element.name}</td>
+                <td>{element.platform}</td>
+                <td>{element.year}</td>
+                <td>{element.genre}</td>
+                <td>{element.publisher}</td>
+                <td>
+                  <button onClick={() => currentGameStats(element.name)}>
+                    View Status
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
       </tbody>
     </table>
   );
