@@ -4,6 +4,7 @@ import DisplayGames from "./components/DisplayGames/DisplayGames";
 import axios from "axios";
 import SearchBar from "./components/SearchBar/SearchBar";
 import GlobalSalesChart from "./components/Chart/Chart"
+import QuestionChart from "./components/Chart/Question"
 function App() {
   const [games, setGames] = useState([]);
 
@@ -26,6 +27,7 @@ function App() {
       <SearchBar games ={games} setGames = {setGames} getGames={getGames}/>
       <GlobalSalesChart videosGames = {games}/>
       <DisplayGames games={games} setGames = {setGames}/>
+      <QuestionChart videosGames = {games}/>
     </div>
   );
 }

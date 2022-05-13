@@ -3,12 +3,13 @@ import { Chart } from "react-google-charts";
 
 const GlobalSalesChart = (props) => {
   function Data() {
+    // year greater 2013
     let filteredGames = props.videosGames.filter((games) => games.year >= 2013);
-
+// Game consoles filtered to variable 
     let gameplatform = filteredGames.map((game) => {
       return game.platform;
     });
-
+// unique list of consoles
     let newplatform = [...new Set(gameplatform)];
 
     // games sale
