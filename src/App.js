@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <nav style={{display: "flex", justifyContent: "space-evenly"}} className=" navbar navbar-expand-lg navbar-light bg-light">
         <div className="title">
-        <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-game-seo-flaticons-flat-flat-icons.png"/>
+        <img className="con-icon" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-game-seo-flaticons-flat-flat-icons.png"/>
 
       <h1 >Video Games</h1>
 </div>

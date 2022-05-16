@@ -78,9 +78,7 @@
 nav{
     height: 9em;
     display: flex;
-   justify-content: space-evenly;
    padding-top: 3em;
-   background-color: transparent;
 }
 
 
@@ -107,7 +105,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1{
-    font-family:serif;
+    font-family:'Bangers', cursive;
     text-decoration-color: #bde0fe;
    
 }
@@ -115,16 +113,6 @@ h1{
 .title{
     display: flex;
 }
-
-
-.icon{
-    fill: red;
-}
-
-.icon:hover{
-    transform: scale(2);
-}
-
 .slide-fade{
     background-color: white;
     border:2px solid grey;
