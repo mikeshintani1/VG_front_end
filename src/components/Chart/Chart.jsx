@@ -34,7 +34,7 @@ const GlobalSalesChart = (props) => {
 
 
     function choose(){
-      let color = (['#DB5461', 'pink', '#8AA29E','yellowgreen'])
+      let color = (['#a2a2d0', 'light blue', '#1e90ff','navy blue','#3f00ff'])
       let index = Math.floor(Math.random()* color.length);
       return color[index]
     }

@@ -37,7 +37,9 @@
     margin-bottom: 3em;
 }
 .App{
-    background-image:linear-gradient(#bde0fe,rgb(245, 245, 245)) ;
+    background-image: url(https://wallpaperaccess.com/full/2541966.jpg);
+    background-color: black;
+
     
 }
 
