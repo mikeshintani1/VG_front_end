@@ -2,6 +2,9 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 const GlobalSalesChart = (props) => {
+  const option = {
+    title: "Global Sales Per Platform",
+  }
   function Data() {
     // year greater 2013
     let filteredGames = props.videosGames.filter((games) => games.year >= 2013);
@@ -37,7 +40,7 @@ const GlobalSalesChart = (props) => {
   }
 
   return (
-    <Chart chartType="ColumnChart" width="100%" height="400px" data={Data()} />
+    <Chart chartType="ColumnChart" width="100%" height="400px" data={Data()} options={option}/>
   );
 };
 
