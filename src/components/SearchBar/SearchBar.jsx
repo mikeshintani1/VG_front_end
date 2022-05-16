@@ -22,16 +22,16 @@ const SearchBar = (props) => {
   }
 
   return (
-    <div>
+    <div >
       <form onSubmit={SearchResult}>
-        <div>
+        <div className="search-bar">
           <input
             type="text"
             placeholder="Search here..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button className="buttonsearch" type="submit">Search</button>
+          <button className="game-btn" type="submit">Search</button>
         </div>
       </form>
     </div>

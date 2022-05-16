@@ -6,6 +6,7 @@ const GlobalSalesChart = (props) => {
     title: "Global Sales Per Platform",
     vAxis: {title: 'Sales per Million'},
     hAxis: {title: 'Platform'},
+    legend:"none"
   }
   function Data() {
     // year greater 2013
@@ -31,7 +32,21 @@ const GlobalSalesChart = (props) => {
         .reduce((total, currentnum) => total + currentnum, 0)
         .toFixed(2);
 
-      return [platform, parseFloat(sum), "#3E7CB1"];
+
+    function choose(){
+      let color = (['#DB5461', 'pink', '#8AA29E','yellowgreen'])
+      let index = Math.floor(Math.random()* color.length);
+      return color[index]
+    }
+
+
+  
+      
+            
+          
+      
+
+      return [platform, parseFloat(sum),choose()];
     });
 
     const data = [

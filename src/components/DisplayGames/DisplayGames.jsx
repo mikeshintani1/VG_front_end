@@ -14,7 +14,7 @@ const DisplayGames = (props) => {
     <div className='tablelayout'>
     <table className="table">
       <thead>
-        <tr>
+        <tr >
           <th scope="col" >Name</th>
           <th scope="col">Platform</th>
           <th scope="col">Year</th>
@@ -27,14 +27,14 @@ const DisplayGames = (props) => {
           .filter((game) => game.year >= 2013)
           .map((element) => {
             return (
-              <tr key={element.id}>
+              <tr className="single-row" key={element.id}>
                 <td>{element.name}</td>
                 <td>{element.platform}</td>
                 <td>{element.year}</td>
                 <td>{element.genre}</td>
                 <td>{element.publisher}</td>
                 <td>
-                  <button onClick={() => currentGameStats(element.name)}>
+                  <button className="slide-fade" onClick={() => currentGameStats(element.name)}>
                     View Status
                   </button>
                 </td>

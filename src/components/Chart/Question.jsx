@@ -7,6 +7,7 @@ export const options = {
   legend: { position: "bottom" },
   vAxis: {title: 'Rank', baseline:15},
   hAxis: {title: 'Year', baseline:2010},
+  colorAxis: {colors: ['yellow', 'red']},
   
 };
 const QuestionChart = (props) => {
@@ -25,7 +26,7 @@ const QuestionChart = (props) => {
 
   return (
     <Chart
-      className="chart"
+      className="bubble-chart"
       chartType="BubbleChart"
       width="100%"
       height="400px"
