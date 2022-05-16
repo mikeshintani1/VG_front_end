@@ -25,6 +25,7 @@ const QuestionChart = (props) => {
 
   return (
     <Chart
+      className="chart"
       chartType="BubbleChart"
       width="100%"
       height="400px"

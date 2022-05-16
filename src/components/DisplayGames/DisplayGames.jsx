@@ -1,4 +1,6 @@
 import React from "react";
+
+
 const DisplayGames = (props) => {
   function currentGameStats(name) {
     let response = props.games.filter((element) => {
@@ -9,10 +11,11 @@ const DisplayGames = (props) => {
     props.setGames(response);
   }
   return (
+    <div className='tablelayout'>
     <table className="table">
       <thead>
         <tr>
-          <th scope="col">Name</th>
+          <th scope="col" >Name</th>
           <th scope="col">Platform</th>
           <th scope="col">Year</th>
           <th scope="col">Genre</th>
@@ -40,6 +43,7 @@ const DisplayGames = (props) => {
           })}
       </tbody>
     </table>
+    </div>
   );
 };
 

@@ -4,6 +4,8 @@ import { Chart } from "react-google-charts";
 const GlobalSalesChart = (props) => {
   const option = {
     title: "Global Sales Per Platform",
+    vAxis: {title: 'Sales per Million'},
+    hAxis: {title: 'Platform'},
   }
   function Data() {
     // year greater 2013
@@ -29,7 +31,7 @@ const GlobalSalesChart = (props) => {
         .reduce((total, currentnum) => total + currentnum, 0)
         .toFixed(2);
 
-      return [platform, parseFloat(sum), "blue"];
+      return [platform, parseFloat(sum), "#3E7CB1"];
     });
 
     const data = [
@@ -40,7 +42,8 @@ const GlobalSalesChart = (props) => {
   }
 
   return (
-    <Chart chartType="ColumnChart" width="100%" height="400px" data={Data()} options={option}/>
+    <div className="box">
+    <Chart chartType="ColumnChart" width="100%" height="400px" data={Data()} options={option}/></div>
   );
 };
 

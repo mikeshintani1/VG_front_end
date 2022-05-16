@@ -31,7 +31,7 @@ const SearchBar = (props) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button type="submit">Search</button>
+          <button className="buttonsearch" type="submit">Search</button>
         </div>
       </form>
     </div>
